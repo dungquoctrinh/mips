@@ -10,10 +10,6 @@ import java.util.Scanner;
 
 /**
  * by Kurt Jiang
- *
- * to Alex and Jun,
- * i need a reset method from the simulator.
- *
  */
 public class GUI
 {
@@ -26,7 +22,7 @@ public class GUI
     private JTextArea memArea, mipsArea;
     private JScrollPane memScrollPane;
     private JButton loadButton, clearButton, lookupButton, stepButton, runButton, resetButton, hexButton, decButton;
-    // (AN) I add 1 more textField, pc2TextFiled, which is the one in the register panel. It's difference with 
+    // (AN) I add 1 more textField, pc2TextFiled, which is the one in the register panel. It's difference with
     // the pcTextField in Memory panel
     private JTextField pcTextField, cycleTextField, instTextField, stallTextField, pc2TextField;
     private String format;
@@ -211,7 +207,7 @@ public class GUI
             text += thisLine;
             index += 4;
         }
-        
+
         //(AN) I add the following line to update the pcTextFiled on top of Memory Panel
         pcTextField.setText(String.format("0x%08x", simulator.getPC()));
         memArea.setText(text);
@@ -293,7 +289,7 @@ public class GUI
         {
             regTextField[i].setText(String.format(format, registers[i]));
         }
-        
+
         // (AN) : I add 4 more line to update the statistics after updating all register
         pc2TextField.setText(String.format("0x%08x", simulator.getPC()));
         cycleTextField.setText(String.format("%d", simulator.getNumberOfCycle()));
@@ -379,7 +375,7 @@ public class GUI
         {
             mipsArea.setText("");
             // I provide an additional method call reset to reset everything
-            // initMemory() and initRegister() only print out zero, but the actual 
+            // initMemory() and initRegister() only print out zero, but the actual
             // register value and memory value in the simulator are still there.
             // reset method will reset everything in the register table and memory table.
             simulator.reset();
