@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 //sample test
@@ -8,6 +6,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Kurt Jiang
  */
 //(AN) I change the name of this class to Assembler, as its function is to assemble asm file
+    //sample  didae
 public class Assembler //MainDriver
 {
     // and, or, add, addu, addiu, sll, srl, sra, sub, sltu, sltiu, beq, bne, lw, sw, j, jr, and jal.
@@ -18,7 +17,6 @@ public class Assembler //MainDriver
             Arrays.asList("and", "or", "add", "addu", "sll", "srl",
             "sra", "sub", "sltu", "jr", "slt", "syscall")
     );
-
 
     private static Set<String> Itype = new TreeSet<String>(
             Arrays.asList("addiu", "sltiu", "beq", "bne", "lw", "sw", "addi", "lui", "ori")
@@ -42,6 +40,7 @@ public class Assembler //MainDriver
      */
     private static void symbolTable(String inFile) throws FileNotFoundException
     {
+
         int lineNumber = 0;
         Scanner scanner = new Scanner(new FileReader(inFile));
         String thisLine = "";
